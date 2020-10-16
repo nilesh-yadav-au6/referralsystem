@@ -10,10 +10,10 @@ class UserDashboard extends Component {
 
   createAndDownloadPdf = (fname,lname,email,id) => {
 
-      const user = JSON.parse(localStorage.getItem("user"))
+      const token = localStorage.getItem("token")
       axios.post('/pdf',{fname,lname,email,id}, {
           headers: {
-            Authorization: user.accessToken
+            Authorization: token
           }
         })
       .then(() => axios.get('/fetch-pdf', { responseType: 'blob' }))
@@ -27,10 +27,10 @@ class UserDashboard extends Component {
 
   createAndExportExcel = (fname,lname,email,earning) => {
 
-    const user = JSON.parse(localStorage.getItem("user"))
+    const token = localStorage.getItem("token")
     axios.post('/excel/file',{fname,lname,email,earning}, {
         headers: {
-          Authorization: user.accessToken
+          Authorization: token
         }
       })
     .then(() => axios.get('/fetch-excel', { responseType: 'blob' }))
@@ -45,7 +45,7 @@ class UserDashboard extends Component {
   render() {
     return (
       <div>
-        {this.props.user.user !== null ? (
+        {this.props.user !== null ? (
           <div className={style.dashMain}>
             <div className={style.nameDiv}>
             <h2>

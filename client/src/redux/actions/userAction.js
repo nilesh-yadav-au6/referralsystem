@@ -32,7 +32,7 @@ export const loginUser = (user) => async (dispatch) => {
 };
 
 export const logout = () => async (dispatch) => {
-  const user = JSON.parse(localStorage.getItem("user"))
+  const token = localStorage.getItem("token")
   try {
     const {
       data
@@ -40,7 +40,7 @@ export const logout = () => async (dispatch) => {
       `/logout`,
       {
         headers: {
-          Authorization: user.accessToken
+          Authorization: token
         }
       }
     );

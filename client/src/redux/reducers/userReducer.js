@@ -1,7 +1,7 @@
 import { USER_CREATE, USER_LOGIN,USER_LOGOUT ,} from "../actionTypes";
 
 const userState = {
-  user: JSON.parse(localStorage.getItem('user')) || null
+  user: null
 };
 
 const userReducer = (state = userState, action) => {
@@ -11,11 +11,10 @@ const userReducer = (state = userState, action) => {
     case USER_CREATE:
       return { ...state, ...state.user.push(payload) };
     case USER_LOGIN:
-      const userJSON = JSON.stringify(payload)
-      localStorage.setItem('user', userJSON)
+      localStorage.setItem('token', payload.accessToken)
       return { ...state, user: payload };
     case USER_LOGOUT:
-      localStorage.removeItem('user')
+      localStorage.removeItem('token')
       return {...state, user: null}
     default:
       return state;
