@@ -1,0 +1,24 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+}
+.home img {
+    width: 100%;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border-radius: 10px;
+    background: #00B4DB; 
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); 
+    background: linear-gradient(to right, #0083B0, #00B4DB); 
+    border-color: transparent;
+    color: black;
+  }
+  .btn:hover{
+    background: #56CCF2; 
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
+    background: linear-gradient(to right, #2F80ED, #56CCF2); 
+  }

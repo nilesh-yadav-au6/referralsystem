@@ -1,0 +1,18 @@
+.navBar {
+  width: 100%;
+  background-color: #6699cc;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.mainHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: x-large;
+  padding-top: 10px
+}
+
